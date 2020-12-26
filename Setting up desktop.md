@@ -126,6 +126,49 @@ function _tattach {
 
 ```
 
+Quick Vim config `.vimrc` or `.config/nvim/init.vim`
+
+```
+" Turn on syntax highlighting
+syntax on
+
+" Blink cursor on error instead of beeping (grr)
+set visualbell
+
+" Whitespace
+set wrap
+set textwidth=79
+set formatoptions=tcqrn1
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+" Show line numbers
+set number
+
+" Show file stats
+set ruler
+
+" Encoding
+set encoding=utf-8
+
+" Forget being compatible with good ol' vi
+set nocompatible
+
+
+syntax on
+
+" Get that filetype stuff happening
+filetype on
+filetype plugin on
+filetype indent on
+
+set pastetoggle=<F2>
+```
+
+
 Setup golang bash source in  `.bash_profile.d/go.source`
 ```shell
 export GOROOT=/usr/local/go
