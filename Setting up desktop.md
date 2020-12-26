@@ -197,5 +197,9 @@ echo keychain > ~/.bash_profile.d/keychain.source
 
 Pet installation 
 ```shell
-
+$ mkdir -p $GOPATH/src/github.com/knqyf263
+$ cd $GOPATH/src/github.com/knqyf263
+$ git clone https://github.com/knqyf263/pet.git
+$ cd pet
+$ make install
 ```
