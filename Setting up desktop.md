@@ -172,9 +172,9 @@ set pastetoggle=<F2>
 Setup golang bash source in  `.bash_profile.d/go.source`
 ```shell
 export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
 test -d $HOME/goworkspace || mkdir $HOME/goworkspace
 export GOPATH=$HOME/goworkspace
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
 
@@ -193,4 +193,9 @@ Keychain installation
 ```shell
 apt-get install keychain
 echo keychain > ~/.bash_profile.d/keychain.source
+```
+
+Pet installation 
+```shell
+
 ```
