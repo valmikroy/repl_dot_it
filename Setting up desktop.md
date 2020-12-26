@@ -188,3 +188,9 @@ rvm install ruby
 rvm --default use ruby
 gem install bundle
 ```
+
+Keychain installation 
+```shell
+apt-get install keychain
+echo keychain > ~/.bash_profile.d/keychain.source
+```
