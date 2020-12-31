@@ -28,7 +28,8 @@ cat >> .ssh/authorized_keys
 ```
 sudo passwd valmikroy
 
-sudo usermod -aG wheel valmikroy
+sudo usermod -aG wheel valmikroy  or sudo usermod -aG sudo valmikroy
+
 ```
 
 ```
