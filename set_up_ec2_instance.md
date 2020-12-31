@@ -5,7 +5,10 @@ Refering https://aws.amazon.com/premiumsupport/knowledge-center/new-user-account
 ### Amazon linux 
 
 ```
-ssh -i ~/.ssh/mykeypair.pem ec2-user@IP
+ssh -i ~/.ssh/mykeypair.pem ec2-user@IP or ssh -i ~/.ssh/mykeypair.pem ubuntu@IP
+
+
+
 
 sudo adduser valmikroy
 ```
