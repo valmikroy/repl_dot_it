@@ -1,8 +1,27 @@
 # Setting up desktop
 
+### Prepare bash startup hooks
 
 
-# tmux configuration 
+
+
+
+```
+mkdir ~/.bash_profile.d
+echo 'export PATH=$PATH:$HOME/.local/bin' > ~/.bash_profile.d/general.source
+```
+
+Update `~/.bash_profile` and `~/.bashrc`
+
+```
+echo 'for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done' >>  ~/.bash_profile
+echo 'for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done' >>  ~/.bashrc
+```
+
+
+
+
+### tmux configuration 
 
 File `~/.tmux.conf`
 
@@ -74,18 +93,6 @@ set-option -g display-panes-colour brightred
 ```
 
 Create bash profile dir 
-
-```
-~/.bash_profile.d
-```
-
-Update `~/.bash_profile`
-
-```
-echo 'source ~/.bash_profile.d/*' >>  ~/.bash_profile
-echo 'source ~/.bash_profile.d/*' >>  ~/.bashrc
-```
-
 
 
 
