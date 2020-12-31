@@ -6,7 +6,8 @@
 ```
 sudo apt-get update
 
-sudo apt-get install awscli keychain golang tmux 
+sudo apt-get install awscli keychain golang tmux python3-pip -y
+pip3 install --user aws-sam-cli
 ```
 
 ### Prepare bash startup hooks
