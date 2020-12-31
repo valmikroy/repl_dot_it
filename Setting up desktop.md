@@ -1,5 +1,14 @@
 # Setting up desktop
 
+
+### packege installs 
+
+```
+sudo apt-get update
+
+sudo apt-get install awscli keychain golang tmux 
+```
+
 ### Prepare bash startup hooks
 
 
@@ -23,7 +32,7 @@ echo 'for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${
 
 ### tmux configuration 
 
-File `~/.tmux.conf`
+`cat > $HOME/.tmux.conf`
 
 ```
 # scollback buffer
@@ -99,7 +108,7 @@ Create bash profile dir
 
 Setup tmux bash shortcuts
 
-File `~/.bash_profile.d/tmux.source`
+`cat > $HOME/.bash_profile.d/tmux.source`
 
 ```shell
 function assh {
@@ -133,7 +142,7 @@ function _tattach {
 
 ```
 
-Quick Vim config `~/.vimrc` or `~/.config/nvim/init.vim`
+Quick Vim config `cat > $HOME/.vimrc` or `cat > $HOME/.config/nvim/init.vim`
 
 ```
 " Turn on syntax highlighting
@@ -176,7 +185,7 @@ set pastetoggle=<F2>
 ```
 
 
-Setup golang bash source in  `~/.bash_profile.d/go.source`
+Setup golang bash source in  `cat > $HOME/.bash_profile.d/go.source`
 
 
 ```shell
@@ -199,15 +208,11 @@ gem install bundle
 ```
 
 Keychain installation 
-```shell
-apt-get install keychain
-echo keychain > ~/.bash_profile.d/keychain.source
-```
+
 
 `cat > $HOME/.bash_profile.d/keychain.source`
 
-```
-source $HOME/.keychain/`hostname`-sh
+```source $HOME/.keychain/`hostname`-sh
 keychain
 ```
 
@@ -221,13 +226,13 @@ $ make install
 ```
 
 Setup git config and related ssh config 
-`~/.gitconfig`
+`cat > $HOME/.gitconfig`
 ```
 [user]
         name = Valmik Roy
         email = myemail@gmail.com
 ```
-and `~/.ssh/config`
+and `cat >> $HOME/.ssh/config`
 ```
 Host github.com-valmikroy
         HostName github.com
