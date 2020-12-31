@@ -133,7 +133,7 @@ function _tattach {
 
 ```
 
-Quick Vim config `.vimrc` or `.config/nvim/init.vim`
+Quick Vim config `~/.vimrc` or `~/.config/nvim/init.vim`
 
 ```
 " Turn on syntax highlighting
@@ -176,7 +176,9 @@ set pastetoggle=<F2>
 ```
 
 
-Setup golang bash source in  `.bash_profile.d/go.source`
+Setup golang bash source in  `~/.bash_profile.d/go.source`
+
+
 ```shell
 export GOROOT=/usr/local/go
 test -d $HOME/goworkspace || mkdir $HOME/goworkspace
