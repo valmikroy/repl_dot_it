@@ -204,6 +204,13 @@ apt-get install keychain
 echo keychain > ~/.bash_profile.d/keychain.source
 ```
 
+`cat > $HOME/.bash_profile.d/keychain.source`
+
+```
+source $HOME/.keychain/`hostname`-sh
+keychain
+```
+
 Pet installation 
 ```shell
 $ mkdir -p $GOPATH/src/github.com/knqyf263
