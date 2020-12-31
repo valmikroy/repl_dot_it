@@ -203,3 +203,18 @@ $ git clone https://github.com/knqyf263/pet.git
 $ cd pet
 $ make install
 ```
+
+Setup git config and related ssh config 
+`~/.gitconfig`
+```
+[user]
+        name = Valmik Roy
+        email = myemail@gmail.com
+```
+and `~/.ssh/config`
+```
+Host github.com-valmikroy
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_rsa_github
+```
