@@ -185,6 +185,14 @@ filetype indent on
 set pastetoggle=<F2>
 ```
 
+Install golang 
+
+```shell
+curl -O https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz
+
+sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+```
+
 
 Setup golang bash source in  `cat > $HOME/.bash_profile.d/go.source`
 
