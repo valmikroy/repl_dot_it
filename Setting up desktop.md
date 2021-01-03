@@ -248,3 +248,10 @@ Host github.com-valmikroy
         User git
         IdentityFile ~/.ssh/id_rsa_github
 ```
+
+### install docker 
+```shell
+ curl -fsSL https://get.docker.com -o get-docker.sh
+ sudo sh get-docker.sh
+ sudo usermod -aG docker `whoami`
+```
