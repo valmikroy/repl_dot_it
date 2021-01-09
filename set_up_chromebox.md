@@ -11,6 +11,12 @@
 ```
 sudo crouton -r xenial -t core -n xenial_workspace
 sudo enter-chroot -n xenial_workspace
+# dropin function 
+
+function _start_xenial {
+	sudo enter-chroot -n xenial_workspace
+}
+
 ```
 
 Cheatsheet
