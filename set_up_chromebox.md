@@ -1,7 +1,15 @@
+# developer mode
+- turn on developer mode using normal keyboard
+- once booted - find a root shell with alt-ctrl-f2
+- login as a `root` and default password `test0000`
+- change root password 
+- create your own user  and add it into sudoers file 
+- this user will allow you to login over the ssh connection
 
 # Install crouton 
 ```
-sudo crouton -r xenial -t core -n focal_core_cli
+sudo crouton -r xenial -t core -n xenial_workspace
+sudo enter-chroot -n xenial_workspace
 ```
 
 Cheatsheet
