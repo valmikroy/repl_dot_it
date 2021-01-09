@@ -5,6 +5,7 @@
 - change root password 
 - create your own user  and add it into sudoers file 
 - this user will allow you to login over the ssh connection
+- disable root login over ssh `PermitRootLogin` in `/etc/ssh/sshd_config`
 
 # Install crouton 
 ```
