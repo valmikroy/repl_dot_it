@@ -6,7 +6,7 @@
 ```
 sudo apt-get update
 
-sudo apt-get install awscli keychain golang tmux python3-pip curl neovim tmux -y
+sudo apt-get install awscli keychain tmux python3-pip curl neovim tmux -y
 pip3 install --user aws-sam-cli
 ```
 
