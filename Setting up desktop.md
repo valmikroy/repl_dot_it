@@ -255,3 +255,14 @@ Host github.com-valmikroy
  sudo sh get-docker.sh
  sudo usermod -aG docker `whoami`
 ```
+
+### quick samba share read-only
+```
+[castshare]
+comment = Casting share
+path = /media
+browsable = yes
+guest ok = yes
+read only = yes
+create mask = 0755
+```
