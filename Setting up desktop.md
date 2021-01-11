@@ -269,6 +269,7 @@ create mask = 0755
 
 ### Configure cups for printers
 
+cupsd.conf for network setup
 ```
 Listen 0.0.0.0:631
 
@@ -281,4 +282,17 @@ Listen 0.0.0.0:631
   Order allow,deny
   Allow from 10.0.0.60
 </Location>
+```
+
+smb.conf for network printing
+```
+[printers]
+   comment = All Printers
+   browseable = yes
+   path = /var/spool/samba
+   printable = yes
+   guest ok = yes
+   read only = yes
+   create mask = 0700
+
 ```
