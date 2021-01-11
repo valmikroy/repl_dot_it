@@ -266,3 +266,14 @@ guest ok = yes
 read only = yes
 create mask = 0755
 ```
+
+### Configure cups for printers
+
+```
+Listen 0.0.0.0:631
+
+<Location />
+  Order allow,deny
+  Allow from 10.0.0.*
+</Location>
+```
