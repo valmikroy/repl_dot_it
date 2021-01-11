@@ -276,4 +276,9 @@ Listen 0.0.0.0:631
   Order allow,deny
   Allow from 10.0.0.*
 </Location>
+
+<Location /admin>
+  Order allow,deny
+  Allow from 10.0.0.60
+</Location>
 ```
