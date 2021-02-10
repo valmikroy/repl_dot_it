@@ -17,8 +17,9 @@ pip3 install --user aws-sam-cli
 
 
 ```
+mkdir ~/bin
 mkdir ~/.bash_profile.d
-echo 'export PATH=$PATH:$HOME/.local/bin' > ~/.bash_profile.d/general.source
+echo 'export PATH=$PATH:$HOME/bin:$HOME/.local/bin' > ~/.bash_profile.d/general.source
 ```
 
 Update `~/.bash_profile` and `~/.bashrc`
