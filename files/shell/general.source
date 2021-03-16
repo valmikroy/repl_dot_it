@@ -2,6 +2,12 @@ export PATH=$PATH:$HOME/.local/bin
 
 alias less='less -R '
 
+which nvim > /dev/null 2>&1
+if [ $? -eq 0 ]
+then
+	alias vim=`which nvim`
+	export EDITOR=`which nvim`
+fi
 
 function _reload {
 	for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done
