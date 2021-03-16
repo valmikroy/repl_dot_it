@@ -1,0 +1,17 @@
+snippet #! "#!/usr/bin/env ruby" b
+#!/usr/bin/env ruby
+$0
+endsnippet
+
+snippet def "def <name>..."
+def ${1:function_name}${2:(${3:arg})}
+	$0
+end
+endsnippet
+
+snippet module "module"
+module ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
+	$0
+end
+endsnippet
+
