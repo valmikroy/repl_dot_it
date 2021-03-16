@@ -1,0 +1,8 @@
+export PATH=$PATH:$HOME/.local/bin
+
+alias less='less -R '
+
+
+function _reload {
+	for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done
+}
