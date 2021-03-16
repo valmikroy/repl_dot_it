@@ -1,5 +1,21 @@
 
 
+## Install
+Fedora installation 
+```
+ sudo yum groups install -y Development\ tools
+ sudo yum install -y cmake
+ sudo yum install -y python3-{devel,pip}
+ sudo pip-3 install neovim --upgrade
+ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+ sudo yum install -y neovim
+
+
+ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim  --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+
+
 Set of commands used in vim
 
 ### NerdTree 
