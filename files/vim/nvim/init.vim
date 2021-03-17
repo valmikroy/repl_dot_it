@@ -82,6 +82,14 @@ nmap <leader>df :set nofoldenable<CR>
 let g:UltiSnipsExpandTrigger="<C-Space>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-x>"
+let g:UltiSnipsEditSplit="vertical"
+
+fun! UltiSnipEditAndLoad()
+  call UltiSnips#Edit(&filetype)
+  call UltiSnips#RefreshSnippets()
+endfun  
+
+nmap <leader>uue :call UltiSnipEditAndLoad()<CR>
 
 " color
 colorscheme slate
