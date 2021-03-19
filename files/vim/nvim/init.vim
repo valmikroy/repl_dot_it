@@ -4,12 +4,14 @@
 
 
 call plug#begin()
-
 Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
-
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-ultisnips'
 call plug#end()
+colorscheme dracula
 
 
 " Turn on syntax highlighting
@@ -79,10 +81,16 @@ nmap <leader>df :set nofoldenable<CR>
 
 
 " Ultisnips
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+
 let g:UltiSnipsExpandTrigger="<C-Space>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+
 
 fun! UltiSnipEditAndLoad()
   call UltiSnips#Edit(&filetype)
@@ -91,14 +99,20 @@ endfun
 
 nmap <leader>uue :call UltiSnipEditAndLoad()<CR>
 
+
+" copy paste
+"set mouse=+a
+
+
+
 " color
-colorscheme slate
-set cursorline
-highlight Pmenu guibg=white guifg=black gui=bold
-highlight Comment gui=bold
-highlight Normal gui=none
-highlight NonText guibg=none
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
-highlight CursorLine ctermbg=DarkGray guibg=Grey10  cterm=none
-highlight NonText cterm=bold ctermfg=12 gui=bold guifg=#253f3f guibg=none
+"colorscheme slate
+"set cursorline
+"highlight Pmenu guibg=white guifg=black gui=bold
+"highlight Comment gui=bold
+"highlight Normal gui=none
+"highlight NonText guibg=none
+"highlight Normal guibg=NONE ctermbg=NONE
+"highlight LineNr guibg=NONE ctermbg=NONE
+"highlight CursorLine ctermbg=DarkGray guibg=Grey10  cterm=none
+"highlight NonText cterm=bold ctermfg=12 gui=bold guifg=#253f3f guibg=none
