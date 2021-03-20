@@ -15,6 +15,27 @@ module ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
 end
 endsnippet
 
+snippet jsonReadWrite  "block json parse"
+require 'json'
+json_object = JSON.parse(File.read(${1:file.json}))
+
+File.open(${2:file.json},"w") do |f|
+  f.write(JSON.pretty_generate(${3:json_hash}))
+end
+endsnippet
+
+
+snippet promptSelection1 "Enumerated select list"
+require "tty-prompt"
+
+
+prompt = TTY::Prompt.new
+choices = %w(emacs nano vim)
+editor = prompt.enum_select("Select an editor?", choices)
+puts "#{editor} is the editor of my choice"
+endsnippet
+
+
 
 snippet singleton "create a singlton class"
 
