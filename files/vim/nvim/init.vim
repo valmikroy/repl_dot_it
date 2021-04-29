@@ -15,6 +15,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'junegunn/fzf'
+Plug 'vim-ruby/vim-ruby'
+Plug 'preservim/vimux'
 call plug#end()
 colorscheme dracula
 
@@ -54,7 +56,7 @@ set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
-
+"autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab nowrap formatoptions-=t
 
 
 """ Mappings
