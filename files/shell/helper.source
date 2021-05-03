@@ -29,6 +29,40 @@ function yes_no  {
  
 }
 
+
+function _check_yaml {
+  local FILE=$1
+
+  if [ -z $FILE ]
+  then
+    echo "provide yaml file to check"
+    exit
+  fi  
+
+  ruby -ryaml -e "p YAML.load(STDIN.read)" < $FILE  > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+        echo "Invalid yaml ${FILE}"
+  fi
+
+}
+
+
+function _check_json {
+  local FILE=$1
+
+  if [ -z $FILE ]
+  then
+    echo "provide json file to check"
+    exit
+  fi  
+
+  jq -e .  < $FILE  > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+        echo "Invalid json ${FILE}"
+  fi
+
+}
+
 #function cmd_wait {
 #        yes_no 'Do you want to continue with the script? '
 #        if [ $? -eq 0 ]
