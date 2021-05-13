@@ -107,6 +107,18 @@ endfun
 
 nmap <leader>uue :call UltiSnipEditAndLoad()<CR>
 
+function! CommentBlock()
+    execute "s/^/#/g"
+endfunction
+
+function! UnCommentBlock()
+    execute "s/^#//g"
+endfunction
+
+vnoremap <leader># :call CommentBlock()<CR>
+vnoremap <leader>## :call UnCommentBlock()<CR>
+
+
 
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['~/.rvm/gems/ruby-2.7.2/bin/solargraph', 'stdio'],
