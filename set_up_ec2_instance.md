@@ -28,6 +28,13 @@ cat >> ~/.ssh/authorized_keys
 
 ```
 
+SSH public key generation from the private key 
+```
+ ssh-keygen -y -f id_rsa_valmikroy > id_rsa_valmikroy.pub
+
+```
+
+
 ```
 sudo passwd valmikroy
 
