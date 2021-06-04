@@ -40,6 +40,10 @@ sudo passwd valmikroy
 
 sudo usermod -aG wheel valmikroy  or sudo usermod -aG sudo valmikroy
 
+sudo su -l
+
+echo "valmikroy ALL=(ALL) NOPASSWD:ALL"  > /etc/sudoers.d/99-sudo-user
+
 ```
 
 ```
