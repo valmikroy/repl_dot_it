@@ -3,6 +3,7 @@
 
 " gem install solargraph
 
+let g:loaded_python_provider=0
 
 if has("unix")
   let s:uname = system("uname -s")
@@ -22,6 +23,8 @@ if exists("g:mac")
 
 else
 
+  let g:python3_host_prog = '/usr/bin/python3'
+
 	call plug#begin()
     Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
     Plug 'scrooloose/nerdtree'
@@ -39,7 +42,11 @@ else
 	call plug#end()
 
 endif
+let g:dracula_colorterm = 1
 colorscheme dracula
+
+
+
 
 
 
