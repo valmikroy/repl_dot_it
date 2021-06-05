@@ -1,5 +1,6 @@
 export PATH=$PATH:$HOME/.local/bin
 
+export TERM=xterm
 
 alias less='less -R '
 

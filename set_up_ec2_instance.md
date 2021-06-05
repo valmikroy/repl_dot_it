@@ -28,10 +28,21 @@ cat >> ~/.ssh/authorized_keys
 
 ```
 
+SSH public key generation from the private key 
+```
+ ssh-keygen -y -f id_rsa_valmikroy > id_rsa_valmikroy.pub
+
+```
+
+
 ```
 sudo passwd valmikroy
 
 sudo usermod -aG wheel valmikroy  or sudo usermod -aG sudo valmikroy
+
+sudo su -l
+
+echo "valmikroy ALL=(ALL) NOPASSWD:ALL"  > /etc/sudoers.d/99-sudo-user
 
 ```
 

@@ -3,21 +3,42 @@
 
 " gem install solargraph
 
-call plug#begin()
-Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
-Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'junegunn/fzf'
-Plug 'vim-ruby/vim-ruby'
-Plug 'preservim/vimux'
-call plug#end()
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    let g:mac=1
+  endif
+endif
+
+if exists("g:mac")
+
+	call plug#begin()
+    Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
+    Plug 'junegunn/fzf'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'SidOfc/mkdx'
+	call plug#end()
+
+else
+
+	call plug#begin()
+    Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
+    Plug 'scrooloose/nerdtree'
+    Plug 'SirVer/ultisnips'
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'ncm2/ncm2-ultisnips'
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
+    Plug 'junegunn/fzf'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'preservim/vimux'
+	call plug#end()
+
+endif
 colorscheme dracula
 
 
@@ -89,7 +110,9 @@ nmap <leader>df :set nofoldenable<CR>
 
 
 " Ultisnips
-autocmd BufEnter * call ncm2#enable_for_buffer()
+if !exists("g:mac")
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+endif
 set completeopt=noinsert,menuone,noselect
 
 
@@ -118,6 +141,11 @@ endfunction
 vnoremap <leader># :call CommentBlock()<CR>
 vnoremap <leader>## :call UnCommentBlock()<CR>
 
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'shift': 1 },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                        \ 'fold': { 'enable': 1 } }
 
 
 let g:LanguageClient_serverCommands = {
