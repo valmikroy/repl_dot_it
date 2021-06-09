@@ -155,7 +155,8 @@ let g:LanguageClient_serverCommands = {
 
 
 
-autocmd FileType ruby,python let g:comment_char="#"
+autocmd BufNewFile,BufRead *.source set filetype=sh
+autocmd FileType ruby,python,sh let g:comment_char="#"
 "autocmd FileType vim let g:comment_char="""
 vnoremap <leader># :call comment#Add()<CR>
 vnoremap <leader>## :call comment#Remove()<CR>

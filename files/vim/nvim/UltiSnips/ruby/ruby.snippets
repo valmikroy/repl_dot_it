@@ -1,4 +1,4 @@
-snippet #! "#!/usr/bin/env ruby" b
+snippet __#! "#!/usr/bin/env ruby" b
 #!/usr/bin/env ruby
 $0
 endsnippet
@@ -15,7 +15,7 @@ module ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
 end
 endsnippet
 
-snippet jsonReadWrite  "block json parse"
+snippet __jsonReadWrite  "block json parse"
 require 'json'
 json_object = JSON.parse(File.read(${1:file.json}))
 
@@ -25,7 +25,7 @@ end
 endsnippet
 
 
-snippet promptSelection1 "Enumerated select list"
+snippet __promptSelection1 "Enumerated select list"
 require "tty-prompt"
 
 
@@ -36,7 +36,7 @@ puts "#{editor} is the editor of my choice"
 endsnippet
 
 
-snippet multiString "print multiline string"
+snippet __multiString "print multiline string"
 
 	puts %Q(
 This is the first line.
@@ -46,8 +46,12 @@ This is the second line.
 
 endsnippet
 
+snippet __writeInFile "write into file"
+	File.open("${1:filename}","w") { |f| f.write "${2:blah string}"}
+	$0
+endsnippet
 
-snippet singleton "create a singlton class"
+snippet __singleton "create a singlton class"
 
 module ${0:YourClass} # :nodoc:
 
