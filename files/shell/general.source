@@ -31,3 +31,15 @@ function _sshagent {
   fi
   ssh-add -l
 }
+
+function _git_top_level {
+  execute git rev-parse --show-toplevel >  /dev/null 2>&1
+  local ret=$?
+  if [ $ret -ne 0 ]
+  then
+    return $ret
+  else 
+    execute git rev-parse --show-toplevel
+  fi
+
+}
