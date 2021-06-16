@@ -25,6 +25,23 @@ end
 endsnippet
 
 
+snippet __yamlReadWrite "block to read write yaml"
+require 'yaml'
+
+a = YAML.load(File.read("${1:example.yml}"))
+
+a = ["one", "two", "three"]
+File.open("${2:example.yml}", "w") do |f| 
+ f.write(${3:.to_yaml}) 
+end
+endsnippet
+
+
+snippet __arrayDef "various syntax for array defination"
+# avoid quote
+# %w( blah blah )
+endsnippet
+
 snippet __promptSelection1 "Enumerated select list"
 require "tty-prompt"
 

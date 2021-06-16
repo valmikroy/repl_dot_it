@@ -154,6 +154,8 @@ let g:LanguageClient_serverCommands = {
 
 
 
+" this allows me to execute bash functions from vim with !
+set shell=bash\ --login
 
 autocmd BufNewFile,BufRead *.source set filetype=sh
 autocmd FileType ruby,python,sh let g:comment_char="#"
