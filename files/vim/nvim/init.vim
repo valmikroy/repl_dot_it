@@ -59,7 +59,7 @@ set visualbell
 " Whitespace
 set wrap
 set textwidth=79
-set formatoptions=tcqrn1
+"set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -153,12 +153,36 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 
+" https://vim.fandom.com/wiki/Display_output_of_shell_commands_in_new_window
+function! s:ExecuteInShell(command)
+  let command = join(map(split(a:command), 'expand(v:val)'))
+  let winnr = bufwinnr('^' . command . '$')
+  silent! execute  winnr < 0 ? 'botright vnew ' . fnameescape(command) : winnr . 'wincmd w'
+  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap number
+  echo 'Execute ' . command . '...'
+  silent! execute 'silent %!'. command
+  silent! execute 'resize '
+  silent! redraw
+  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
+  echo 'Shell command ' . command . ' executed.'
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
+
 
 " this allows me to execute bash functions from vim with !
 set shell=bash\ --login
 
+" set file type to shell 
+" look at the filetype with :filetype?
 autocmd BufNewFile,BufRead *.source set filetype=sh
-autocmd FileType ruby,python,sh let g:comment_char="#"
+
+" setup comment char
+autocmd FileType ruby,python,sh 
+                                \ let g:comment_char="#" |
+                                \ setlocal nowrap |  " do not automatically wrap on load
+                                \ set formatoptions=cqrn1 " do not automatically wrap text when typing
+                                
 "autocmd FileType vim let g:comment_char="""
 vnoremap <leader># :call comment#Add()<CR>
 vnoremap <leader>## :call comment#Remove()<CR>

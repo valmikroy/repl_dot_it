@@ -63,6 +63,15 @@ This is the second line.
 
 endsnippet
 
+snippet "__caseState" "case <variable> when <expression> ... end" 
+case ${1:variable}
+when ${2:expression}
+  $0
+else
+
+  end
+endsnippet
+
 snippet __writeInFile "write into file"
 	File.open("${1:filename}","w") { |f| f.write "${2:blah string}"}
 	$0
