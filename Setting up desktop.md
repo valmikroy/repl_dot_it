@@ -304,3 +304,7 @@ smb.conf for network printing
    create mask = 0700
 
 ```
+
+
+### Transmission installation 
+After installing transmission, update its `transmission-daemon.service` file with the `ExecStartPre` to check for the storage mount. Stop transmission and update `rpc-whitelist` in the  `settings.json` with your IP subnet. 
