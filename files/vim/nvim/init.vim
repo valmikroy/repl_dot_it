@@ -19,6 +19,7 @@ if exists("g:mac")
     Plug 'junegunn/fzf'
     Plug 'vim-ruby/vim-ruby'
     Plug 'SidOfc/mkdx'
+    Plug 'https://github.com/adelarsq/vim-matchit'
 	call plug#end()
 
 else
@@ -39,6 +40,7 @@ else
     Plug 'junegunn/fzf'
     Plug 'vim-ruby/vim-ruby'
     Plug 'preservim/vimux'
+    Plug 'https://github.com/adelarsq/vim-matchit'
 	call plug#end()
 
 endif
@@ -167,6 +169,7 @@ function! s:ExecuteInShell(command)
   silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
   echo 'Shell command ' . command . ' executed.'
 endfunction
+" :Shell _b_ruby %
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
 
