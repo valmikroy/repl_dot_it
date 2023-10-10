@@ -294,6 +294,10 @@ Listen 0.0.0.0:631
 
 smb.conf for network printing
 ```
+sudo usermod -aG lpadmin <user>
+```
+
+```
 [printers]
    comment = All Printers
    browseable = yes
