@@ -275,6 +275,14 @@ read only = yes
 create mask = 0755
 ```
 
+### Configuring Brother HL-2300D
+
+```
+sudo apt-get install print-server^
+```
+Then follow the [brother's guide](https://support.brother.com/g/b/downloadhowto.aspx?c=au&lang=en&prod=hll2300d_us_eu_as&os=128&dlid=dlf006893_000&flang=4&type3=625)
+For USB, make sure you choose `No` for "Will you specify the DeviceURI ?"
+
 ### Configure cups for printers
 
 cupsd.conf for network setup
