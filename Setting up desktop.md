@@ -322,6 +322,13 @@ sudo usermod -aG lpadmin <user>
 
 ```
 
+some helpful cli commands 
+```
+sudo lpadmin -p HLL2300D -v usb://Brother/HL-L2300D%20series?serial=U63878E8N432607 -E
+sudo lpoptions -d HLL2300D  # make default printer
+sudo lpstat  -d # check default printer
+ls | lp # print
+```
 
 ### Transmission installation 
 After installing transmission, update its `transmission-daemon.service` file with the `ExecStartPre` to check for the storage mount. Stop transmission and update `rpc-whitelist` in the  `settings.json` with your IP subnet. 
