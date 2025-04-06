@@ -275,6 +275,11 @@ read only = yes
 create mask = 0755
 ```
 
+### Add SMB user 
+```
+ sudo smbpasswd -a  `whoami`
+```
+
 ### Configuring Brother HL-2300D
 
 ```
